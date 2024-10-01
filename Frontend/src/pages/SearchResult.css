@@ -1,0 +1,33 @@
+.search-result-container {
+    padding: 20px;
+  }
+  
+  .properties-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .property-card-container {
+    flex: 1 1 200px;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  .pagination button {
+    border: none;
+    padding: 10px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  

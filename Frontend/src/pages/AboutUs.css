@@ -1,0 +1,80 @@
+/* src/components/AboutUs.css
+.about-us{
+    background-image: url("OIP.jpg");
+    background-size:cover;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+#new {
+    background-size: 70px 100vh;
+    width: 70px;
+    height: 800px;
+}
+
+#l {
+    margin-left: 20px;
+    width: 35%;
+    height: 800px;
+}
+
+#b {
+    font-size: 35px;
+    font-weight: 800;
+    text-decoration: underline solid wheat;
+    color: purple;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#f {
+    font-weight: 400;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#s {
+    margin-top: 120px;
+    color: blueviolet;
+}
+
+#new1 {
+    border: 1px solid grey;
+    padding: 4px;
+    width: 300px;
+}
+
+#r {
+    width: 65%;
+    height: 800px;
+    display: flex;
+}
+
+.r {
+    height: 170px;
+    width: 400px;
+    margin: 40px 10px 40px 40px;
+    display: flex;
+}
+
+.new {
+    height: 180px;
+    width: 200px;
+    border-radius: 50%;
+    background-size: cover;
+    border: 2px solid purple;
+    outline: 5px solid wheat;
+}
+
+.d {
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.name {
+    font-size: 18px;
+    color: blueviolet;
+    font-weight: 700;
+} */

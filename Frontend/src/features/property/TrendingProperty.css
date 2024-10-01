@@ -1,0 +1,46 @@
+.trending-flats-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+
+  
+  .flat-section {
+    margin-bottom: 40px;
+  }
+  
+  .flat-section h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .flats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .flat-card-container {
+    position: relative;
+    flex: 0 0 calc(25% - 15px);
+    margin-bottom: 15px;
+  }
+  
+  .show-more-btn {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 40px;
+    color: #000000;
+  }
+  
+  .show-more-btn:hover {
+    color: #775c5c;
+  }
+  

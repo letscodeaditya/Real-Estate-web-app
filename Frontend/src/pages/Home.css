@@ -1,0 +1,107 @@
+.hero-image {
+  background-image: url("https://res.cloudinary.com/dq5bhyeii/image/upload/v1726736185/new_c6ofkm.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  position: relative;
+}
+.fontvariable{
+  font-family: "Josefin Sans", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 1000;
+  font-style: normal;
+}
+
+.welcome-text {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.search-card {
+  position: absolute;
+  bottom: 10vh; /* Changed from px to vh for better responsiveness */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw; /* Use vw for responsive width */
+  z-index: 1;
+}
+
+.card {
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Small devices (phones) */
+@media (max-width: 600px) {
+  .hero-image {
+    height: 100vh; /* Always relative to viewport */
+  }
+
+  .welcome-text {
+    font-size: 2rem; 
+    top: 25%;
+  }
+
+  .search-card {
+    width: 95vw; /* Use vw to make it fully responsive */
+    bottom: 8vh; /* Adjust positioning relative to viewport */
+  }
+
+  .card {
+    border-radius: 5px; 
+    padding: 15px;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .hero-image {
+    height: 100vh; /* Relative to viewport */
+  }
+
+  .welcome-text {
+    font-size: 2.5rem;
+  }
+
+  .search-card {
+    width: 85vw; 
+    bottom: 10vh;
+  }
+
+  .card {
+    border-radius: 8px;
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 1025px) {
+  .hero-image {
+    height: 80vh; 
+  }
+
+  .welcome-text {
+    font-size: 3rem;
+  }
+
+  .search-card {
+    width: 60vw; 
+    bottom: 10vh;
+  }
+
+  .card {
+    border-radius: 10px;
+  }
+}
