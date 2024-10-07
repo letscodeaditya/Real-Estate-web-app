@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import com.propertypal.backend.model.Flat;
 import com.propertypal.backend.model.User;
@@ -30,9 +31,15 @@ public class FlatServiceImpl implements FlatService {
     }
     
     @Override
-    public Page<Flat> getFlatsByTypeCityAndSize(String type, String city, String flatSize, int pageno, int size) {
-        Pageable pageable = PageRequest.of(pageno, size);
-        return flatRepository.findByTypeAndCityAndFlatSize(type, city, flatSize, pageable);
+    public Page<Flat> getFlatsByTypeCityAndSize(String type, String city, String flatSize, int pageno, int size, String sort) {
+    	// Determine sorting order based on the sort parameter
+        Sort sorting = Sort.by("price"); // Default sorting by price ascending
+        if (sort.equals("price_desc")) {
+            sorting = sorting.descending();
+        }
+
+        Pageable pageable = PageRequest.of(pageno, size, sorting);
+        return flatRepository.findByTypeAndCityAndFlatSize(type, city, flatSize, pageable);	
     }
     
     @Override
@@ -62,13 +69,10 @@ public class FlatServiceImpl implements FlatService {
     
     @Override
     public Page<Flat> getFlatsPostedByUser(Long postedBy, int pageNo, int pageSize) {
-        // Create a pageable object with page number and size
-        Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
-
-        // Fetch the flats using pagination
+   
+        Pageable pageable = PageRequest.of(pageNo - 1, pageSize);        
         Page<Flat> flatsPage = flatRepository.findByPostedBy(postedBy, pageable);
-
-        // If the page content is empty, throw an exception or handle it accordingly
+      
         if (flatsPage.hasContent()) {
             return flatsPage;
         } else {

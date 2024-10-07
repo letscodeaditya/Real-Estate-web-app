@@ -44,8 +44,11 @@ public class FlatController {
             @PathVariable String city,
             @PathVariable String flatSize,
             @PathVariable int pageno,
-            @PathVariable int size) {
-        return ResponseEntity.ok(flatService.getFlatsByTypeCityAndSize("rent", city, flatSize, pageno, size));
+            @PathVariable int size,
+            @RequestParam(required = false, defaultValue = "price_asc") String sort) {
+
+        // Pass the sort parameter to the service layer
+        return ResponseEntity.ok(flatService.getFlatsByTypeCityAndSize("rent", city, flatSize, pageno, size, sort));
     }
 
     @GetMapping("/sell/{city}/{flatSize}/{pageno}/{size}")
@@ -53,8 +56,11 @@ public class FlatController {
             @PathVariable String city,
             @PathVariable String flatSize,
             @PathVariable int pageno,
-            @PathVariable int size) {
-        return ResponseEntity.ok(flatService.getFlatsByTypeCityAndSize("sell", city, flatSize, pageno, size));
+            @PathVariable int size,
+            @RequestParam(required = false, defaultValue = "price_asc") String sort) {
+
+        // Pass the sort parameter to the service layer
+        return ResponseEntity.ok(flatService.getFlatsByTypeCityAndSize("sell", city, flatSize, pageno, size, sort));
     }
     
     @GetMapping("/{id}")

@@ -267,7 +267,7 @@ export const PostedProperty = () => {
               />
               <Button
                 variant="dark"
-                className="mt-3 bg-danger w-50"
+                className="mt-3 bg-danger w-50 p-2"
                 onClick={applyFilters}
               >
                 Apply Filters
@@ -321,14 +321,14 @@ export const PostedProperty = () => {
             <div className="flex justify-end mt-4">
                 <Button
                     variant="dark"
-                    className="bg-danger mr-2"
+                    className="bg-danger mr-2 p-2"
                     onClick={() => handleConfirmNewProperty("flat")}
                 >
                     Add Flat
                 </Button>
                 <Button
                     variant="dark"
-                    className="bg-danger"
+                    className="bg-danger p-2"
                     onClick={() => handleConfirmNewProperty("bungalow")}
                 >
                     Add Bungalow

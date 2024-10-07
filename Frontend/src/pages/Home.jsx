@@ -9,7 +9,7 @@ import PrimeProperty from "../features/property/PrimeProperty";
 const Home = () => {
   const [searchParams, setSearchParams] = useState({
     city: "",
-    flatSize: "",
+    Size: "",
     type: "",
     propertyType: "",
   });
@@ -22,14 +22,14 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { city, flatSize, type, propertyType } = searchParams;
+    const { city, Size, type, propertyType } = searchParams;
 
-    if (!city || !flatSize || !type || !propertyType) {
+    if (!city || !Size || !type || !propertyType) {
       toast.error("Please fill all fields");
       return;
     }
 
-    navigate(`/searchresult/${propertyType}s/${type}/${city}/${flatSize}/0/8`);
+    navigate(`/searchresult/${propertyType}/${type}/${city}/${Size}/0/8`);
   };
 
   return (
@@ -73,16 +73,16 @@ const Home = () => {
 
               <div className="w-full md:w-1/2 px-2 mb-4">
                 <label
-                  htmlFor="flatSize"
+                  htmlFor="Size"
                   className="block text-gray-700 text-sm font-bold mb-2 fontvariable"
                 >
                   BHK:
                 </label>
                 <select
-                  id="flatSize"
-                  name="flatSize"
+                  id="Size"
+                  name="Size"
                   className="w-full border border-gray-300 rounded-md px-4 py-2 fontvariable text-sm"
-                  value={searchParams.flatSize}
+                  value={searchParams.Size}
                   onChange={handleChange}
                 >
                   <option value="">Select size</option>

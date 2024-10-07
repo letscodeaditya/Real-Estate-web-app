@@ -66,7 +66,8 @@ const SignUp = () => {
 
   return (<>
   { !userData  ?
-    (<div className="p-3 max-w-lg mx-auto">
+    (<>
+    <div className="p-3 max-w-lg mx-auto bg-white mt-5 rounded-5 shadow">
       <ToastContainer/>
       <h1 className="text-3xl text-center font-semibold my-7" style={{ fontFamily: '"Josefin Sans", system-ui', fontWeight: '1000', fontSize: '50px' }}>Sign Up</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -221,7 +222,8 @@ const SignUp = () => {
         </Link>
       </div>
       {error && <p className="text-red-500 mt-5">{error}</p>}
-    </div> ) : <Navigate to="/home/profile" />}
+    </div> 
+      <div className='mt-2  h-5'></div> </>) : <Navigate to="/home/profile" />}
     </>
   );
 };

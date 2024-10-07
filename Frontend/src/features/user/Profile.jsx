@@ -14,7 +14,7 @@ const Profile = () => {
   const navigate = useNavigate();
   const userData = localStorage.getItem("user");
   const user = JSON.parse(userData);
-
+  const api = import.meta.env.VITE_API_BASE_URL;
   const { loading, error, updateSuccess } = useSelector((state) => state.user);
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const Profile = () => {
       data.append("file", pic);
   
       // Make a request to your backend that handles the S3 upload
-      fetch("http://localhost:8080/api/v1/images/upload", { // Change to your backend API
+      fetch(`${api}/api/v1/images/upload`, { // Change to your backend API
         method: "POST",
         body: data,
       })
@@ -110,8 +110,8 @@ const Profile = () => {
 
 
   return (
-    <div className="p-3 max-w-lg mx-auto">
-      <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
+    <div className="p-3  mx-auto bg-white mt-5 rounded-5 shadow" style={{width:'50vw'}}>
+      <h1 className=" font-semibold text-center my-7">Profile</h1>
       <ToastContainer />
       
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">

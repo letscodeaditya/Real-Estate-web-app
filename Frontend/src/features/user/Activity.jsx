@@ -46,7 +46,7 @@ const Activity = () => {
                 <img
                   src="https://res.cloudinary.com/dq5bhyeii/image/upload/v1726721114/pexels-jovydas-2462015_y3oxnv.jpg"
                   className="img-fluid rounded mt-2 ms-2 mb-2"
-                  style={{ height: '55%', width: '100%' }}
+                  style={{ height: '50%', width: '100%' }}
                   alt="Flat AD"
                 />
               </div>

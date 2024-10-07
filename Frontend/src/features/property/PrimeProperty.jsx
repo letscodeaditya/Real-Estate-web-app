@@ -14,11 +14,13 @@ const PrimeProperty = () => {
   const userData = localStorage.getItem("user");
   const user = userData ? JSON.parse(userData) : null;
   const isSubscribed = user?.subscription === "true";
+  const api = import.meta.env.VITE_API_BASE_URL;
+
 
 
 
   useEffect(() => {
-    axios.get(`/api/flats/prime/0/8`)
+    axios.get(`${api}/api/flats/prime/0/8`)
       .then(response => {
         console.log(`Prime flats API response:`, response.data);
         setPrimeProperties(response.data.content);

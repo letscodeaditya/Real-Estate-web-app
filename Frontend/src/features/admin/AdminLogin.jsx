@@ -6,6 +6,8 @@ const AdminLogin = () => {
   const [loading, setLoading] = useState();
   const [error, setError] = useState();
   const navigate = useNavigate();
+  const api = import.meta.env.VITE_API_BASE_URL;
+
 
   const handleChange = (e) => {
     setFormData({
@@ -13,11 +15,12 @@ const AdminLogin = () => {
       [e.target.id]: e.target.value,
     });
   };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:8080/api/admin/login", {
+      const res = await fetch(`${api}/api/admin/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,6 +43,7 @@ const AdminLogin = () => {
       setError(error.message);
     }
   };
+
   return (
     <div className="p-3 max-w-lg mx-auto">
       <h1 className="text-3xl text-center font-semibold my-7">Admin Sign In</h1>

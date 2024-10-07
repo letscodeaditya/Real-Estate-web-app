@@ -9,6 +9,7 @@ const FlatForm = () => {
   const [pic, setPic] = useState();
   const userData = localStorage.getItem("user");
   const user = JSON.parse(userData);
+  const api = import.meta.env.VITE_API_BASE_URL;
 
   const handleChange = (e) => {
     const { id, value, type, checked } = e.target;
@@ -53,7 +54,7 @@ const FlatForm = () => {
         const data = new FormData();
         data.append("file", pic);
 
-        fetch("http://localhost:8080/api/v1/images/upload", {
+        fetch(`${api}/api/v1/images/upload`, {
           method: "POST",
           body: data,
       })
@@ -110,7 +111,7 @@ const handleSubmit = async (e) => {
             prime: "false",
         };
 
-        const res = await fetch(`http://localhost:8080/api/flats/add`, {
+        const res = await fetch(`${api}/api/flats/add`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

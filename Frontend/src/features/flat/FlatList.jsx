@@ -15,13 +15,15 @@ const FlatList = () => {
   const user = userData ? JSON.parse(userData) : null;
   const cityData = localStorage.getItem("city");
   const city = cityData || 'kolkata'; // Use the city from localStorage or default to 'kolkata'
+  const api = import.meta.env.VITE_API_BASE_URL;
+
 
   useEffect(() => {
     fetchFlats(page);
   }, [page, city, type]);
 
   const fetchFlats = (pageNumber) => {
-    axios.get(`/api/flats/${type}/${city}/${pageNumber}/8`)
+    axios.get(`${api}/api/flats/${type}/${city}/${pageNumber}/8`)
       .then(response => {
         setFlats(response.data.content);
         setTotalPages(response.data.totalPages);

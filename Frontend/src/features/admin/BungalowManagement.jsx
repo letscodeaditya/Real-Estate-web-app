@@ -3,6 +3,8 @@ import axios from 'axios';
 
 const BungalowManagement = () => {
   const [bungalows, setBungalows] = useState([]);
+  const api = import.meta.env.VITE_API_BASE_URL;
+
 
   useEffect(() => {
     fetchBungalows();
@@ -10,7 +12,7 @@ const BungalowManagement = () => {
 
   const fetchBungalows = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/admin/bungalow');
+      const response = await axios.get(`${api}/api/admin/bungalow`);
       setBungalows(response.data);
     } catch (error) {
       console.error('Error fetching bungalows:', error);
@@ -19,7 +21,7 @@ const BungalowManagement = () => {
 
   const deleteBungalow = async (bungalowId) => {
     try {
-      await axios.delete(`http://localhost:8080/api/admin/bungalow/${bungalowId}`);
+      await axios.delete(`${api}/api/admin/bungalow/${bungalowId}`);
       fetchBungalows(); // Refresh the bungalow list
     } catch (error) {
       console.error('Error deleting bungalow:', error);

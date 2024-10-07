@@ -9,7 +9,7 @@ import com.propertypal.backend.model.Flat;
 public interface FlatService {
     Flat saveFlat(Flat flat);
     Page<Flat> getFlatsByTypeAndCity(String type, String city, int page, int size);
-    Page<Flat> getFlatsByTypeCityAndSize(String type, String city, String flatSize, int pageno, int size);
+    Page<Flat> getFlatsByTypeCityAndSize(String type, String city, String flatSize, int pageno, int size, String sort);
     List<Flat> getAllFlat();
     void deleteFlatByFlatId(Long flatId);
     Flat getFlatById(Long id);

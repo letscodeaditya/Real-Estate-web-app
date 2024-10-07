@@ -3,6 +3,8 @@ import axios from 'axios';
 
 const FlatManagement = () => {
   const [flats, setFlats] = useState([]);
+  const api = import.meta.env.VITE_API_BASE_URL;
+
 
   useEffect(() => {
     fetchFlats();
@@ -10,7 +12,7 @@ const FlatManagement = () => {
 
   const fetchFlats = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/admin/flat');
+      const response = await axios.get(`${api}/api/admin/flat`);
       setFlats(response.data);
     } catch (error) {
       console.error('Error fetching flats:', error);
@@ -19,7 +21,7 @@ const FlatManagement = () => {
 
   const deleteFlat = async (flatId) => {
     try {
-      await axios.delete(`http://localhost:8080/api/admin/flat/${flatId}`);
+      await axios.delete(`${api}/api/admin/flat/${flatId}`);
       fetchFlats(); // Refresh the flat list
     } catch (error) {
       console.error('Error deleting flat:', error);

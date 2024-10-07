@@ -3,11 +3,11 @@ import './Card.css';
 
 const Card = ({ property, onClick }) => {
   const cardStyle = property.type === "sell" 
-    ? { backgroundColor: '#FFBF00' } 
-    : { backgroundColor: 'white' };
+    ? { backgroundColor: '#FFF5E1' } 
+    : { backgroundColor: '#FFF5E1' };
 
   return (
-    <div className="card rounded" style={cardStyle} onClick={() => onClick(property.flatId || property.bungalowId)}>
+    <div className="card rounded-4" style={cardStyle} onClick={() => onClick(property.flatId || property.bungalowId)}>
       <div className="im" style={{ backgroundImage: `url(${property.photo1})` }}></div>
       <div id="w">
         <div className="s">{property.type} {property.flatId ? 'Flat' : 'Bungalow'}</div>

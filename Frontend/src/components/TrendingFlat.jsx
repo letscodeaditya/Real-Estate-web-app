@@ -13,9 +13,11 @@ const TrendingFlat = () => {
   const user = userData ? JSON.parse(userData) : null;
   const selectedCity = localStorage.getItem("city") || 'kolkata';
   const city = user ? user.city : selectedCity;
+  const api = import.meta.env.VITE_API_BASE_URL;
+
 
   useEffect(() => {
-    axios.get(`/api/flats/sell/${city}/0/4`)
+    axios.get(`${api}/api/flats/sell/${city}/0/4`)
       .then(response => {
         console.log("Sell flats API response:", response.data);
         setSellFlats(response.data.content);
@@ -24,7 +26,7 @@ const TrendingFlat = () => {
         console.error("Sell flats API error:", error);
       });
 
-    axios.get(`/api/flats/rent/${city}/0/4`)
+    axios.get(`${api}/api/flats/rent/${city}/0/4`)
       .then(response => {
         console.log("Rent flats API response:", response.data);
         setRentFlats(response.data.content);

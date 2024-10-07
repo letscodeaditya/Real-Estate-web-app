@@ -16,6 +16,8 @@ const PropertyList = () => {
   const [totalPages, setTotalPages] = useState(0);
   const nav = useNavigate();
   const city = useSelector((state)=>state.user.city);
+  const api = import.meta.env.VITE_API_BASE_URL;
+
 
 
   useEffect(() => {
@@ -23,7 +25,7 @@ const PropertyList = () => {
   }, [page, city, type, propertyType]);
 
   const fetchProperties = (pageNumber) => {
-    axios.get(`/api/${propertyType}s/${type}/${city}/${pageNumber}/8`)
+    axios.get(`${api}/api/${propertyType}s/${type}/${city}/${pageNumber}/8`)
       .then(response => {
         setProperties(response.data.content);
         setTotalPages(response.data.totalPages);

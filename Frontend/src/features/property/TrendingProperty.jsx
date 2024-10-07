@@ -63,7 +63,7 @@ const TrendingProperty = ({ propertyType }) => {
     <div className="trending-flats-container ">
       {sellProperties.length == 0 && rentProperties.length == 0 &&(<EmptyComponent/>)}
   {sellProperties.length > 0 &&(
-    <div className="flat-section bg-white  p-5 shadow" style={{borderRadius:'50px'}}>
+    <div className="flat-section  p-5 shadow" style={{borderRadius:'50px',backgroundColor:'#FFB22C'}}>
       <h2 className='d-flex align-items-center mb-4'  style={{ fontFamily: '"New Amsterdam", sans-serif', fontWeight: '100', fontStyle: 'normal', fontSize: '50px' }}>
         <IoIosTime style={{ fontSize: "70px", color: 'black', marginRight: '10px' }}/>
         Recently added {propertyType.charAt(0).toUpperCase() + propertyType.slice(1)}s for Sale in {userCity} -
@@ -87,7 +87,7 @@ const TrendingProperty = ({ propertyType }) => {
   )}
 
   {rentProperties.length > 0 && (
-    <div className="flat-section bg-white p-5 shadow" style={{borderRadius:'50px',}}>
+    <div className="flat-section p-5 shadow" style={{borderRadius:'50px',backgroundColor: '#FFB22C'}}>
       <h2 className='d-flex align-items-center' style={{ fontFamily: '"New Amsterdam", sans-serif', fontWeight: '100', fontStyle: 'normal', fontSize: '50px' }}>
        <LuTrendingUp style={{ fontSize: "100px", color: 'red', marginRight: '20px' }} />
         Trending  {propertyType.charAt(0).toUpperCase() + propertyType.slice(1)}s for Rent in {userCity} -
